@@ -3,7 +3,6 @@ class HashMap {
     this.buckets = new Array(initialCapacity);
     this.loadFactor = loadFactor;
     this.size = 0;
-    this.collisions = 0;
   }
 
   hash(key) {
@@ -13,5 +12,22 @@ class HashMap {
       hashCode += primeNumber + key.charCodeAt(i);
     }
     return hashCode % this.buckets.length;
+  }
+
+  set(key, value) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+    const existingNode = bucket?.find((node) => node.key === key);
+
+    if (existingNode) {
+      existingNode.value = value;
+    } else {
+      bucket.append({ key, value });
+      this.size++;
+    }
+
+    if (this.size / this.buckets.length > this.loadFactor) {
+      //this.resize();
+    }
   }
 }
