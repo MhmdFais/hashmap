@@ -30,4 +30,27 @@ class HashMap {
       //this.resize();
     }
   }
+
+  get(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+    const existingNode = bucket?.find((node) => node.key === key);
+    return existingNode?.value;
+  }
+
+  has(key) {
+    const index = this.hash(key);
+    if (!this.buckets[index]) return false;
+    else return true;
+  }
+
+  remove(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+    const existingNode = bucket?.find((node) => node.key === key);
+    if (existingNode) {
+      bucket.remove(existingNode);
+      this.size--;
+    }
+  }
 }
