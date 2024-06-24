@@ -74,7 +74,7 @@
 
 ## Inspiration
 
-- - [The Odin Project](https://www.theodinproject.com/) - [Hash Maps](https://www.theodinproject.com/paths/full-stack-javascript/courses/data-structures-and-algorithms/lessons/hash-maps)
+-  [The Odin Project](https://www.theodinproject.com/) - [Hash Maps](https://www.theodinproject.com/paths/full-stack-javascript/courses/data-structures-and-algorithms/lessons/hash-maps)
 
 ## 8. Author
 
